@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8223d6a6a5c34e3b8e6f9d1dd50e008f" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="DatabaseModel.Applicant" Width="1.5" PointX="7.3450529237021938" PointY="11.163964112831263" />
+        <EntityTypeShape EntityType="DatabaseModel.Application" Width="1.5" PointX="11.876068241836535" PointY="1.8651288905484271" />
+        <EntityTypeShape EntityType="DatabaseModel.Contact" Width="1.5" PointX="0.10104183112319645" PointY="21.955664793940105" />
+        <EntityTypeShape EntityType="DatabaseModel.Country" Width="1.5" PointX="4.5246354995875784" PointY="7.3634068255142342" />
+        <EntityTypeShape EntityType="DatabaseModel.Degree" Width="1.5" PointX="4.9710842058859228" PointY="12.298867544298464" />
+        <EntityTypeShape EntityType="DatabaseModel.ExceptionHandler" Width="1.5" PointX="8.3616912552908484" PointY="2.2693026076393679" />
+        <EntityTypeShape EntityType="DatabaseModel.Faq" Width="1.5" PointX="4.1476837062033285" PointY="7.8222683555550256" />
+        <EntityTypeShape EntityType="DatabaseModel.Field" Width="1.5" PointX="0.43480405231695807" PointY="3.9157905894870826" />
+        <EntityTypeShape EntityType="DatabaseModel.Help" Width="1.5" PointX="9.0011330028069825" PointY="2.3226372759428981" />
+        <EntityTypeShape EntityType="DatabaseModel.News" Width="1.5" PointX="6.2724123533221015" PointY="8.9580393326273366" />
+        <EntityTypeShape EntityType="DatabaseModel.NoSelection" Width="1.5" PointX="1.6147196114131808" PointY="18.652390727145779" />
+        <EntityTypeShape EntityType="DatabaseModel.OwnerShip" Width="1.5" PointX="7.7548844645521076" PointY="3.4366216824560527" />
+        <EntityTypeShape EntityType="DatabaseModel.Paper" Width="1.5" PointX="6.5481265925560734" PointY="14.378785423179522" />
+        <EntityTypeShape EntityType="DatabaseModel.Process" Width="1.5" PointX="6.8757368767986708" PointY="21.811606774950217" />
+        <EntityTypeShape EntityType="DatabaseModel.Profile" Width="1.5" PointX="9.61370281018955" PointY="11.44625092085742" />
+        <EntityTypeShape EntityType="DatabaseModel.Role" Width="1.5" PointX="10.426853801322569" PointY="12.457207238514538" />
+        <EntityTypeShape EntityType="DatabaseModel.Sentence" Width="1.5" PointX="5.2496760530628617" PointY="1.5557181246372489" />
+        <EntityTypeShape EntityType="DatabaseModel.Service" Width="1.5" PointX="8.93286855934787" PointY="4.8665708177101665" />
+        <EntityTypeShape EntityType="DatabaseModel.SpecialService" Width="1.5" PointX="1.3052204238740823" PointY="12.208226537428901" />
+        <EntityTypeShape EntityType="DatabaseModel.Technology" Width="1.5" PointX="7.7799962385464445" PointY="8.5311552176862744" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.49478549347016287" PointY="29.179873494980797" />
+        <EntityTypeShape EntityType="DatabaseModel.ApplicantProduct" Width="1.5" PointX="3.2389879763307929" PointY="27.621547980057798" />
+        <AssociationConnector Association="DatabaseModel.FK_Applicant_Degree" />
+        <AssociationConnector Association="DatabaseModel.FK_Applicant_User" />
+        <AssociationConnector Association="DatabaseModel.FK_Role_Application" />
+        <AssociationConnector Association="DatabaseModel.FK_User_Application" />
+        <AssociationConnector Association="DatabaseModel.FK_Technology_Country" />
+        <AssociationConnector Association="DatabaseModel.FK_Technology_OwnerShip" />
+        <AssociationConnector Association="DatabaseModel.FK_Technology_Process" />
+        <AssociationConnector Association="DatabaseModel.FK_Profile_User" />
+        <AssociationConnector Association="DatabaseModel.UsersInRole" />
+        <EntityTypeShape EntityType="DatabaseModel.Product" Width="1.5" PointX="9.875" PointY="64.375" />
+        <AssociationConnector Association="DatabaseModel.FK_Product_Applicant" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

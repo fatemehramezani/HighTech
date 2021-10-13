@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="صفحه اصلی">
+    <!--<siteMapNode url="~/Administrator/Gallery.aspx" title="گالری تصاویر" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Paper.aspx" title="مقالات" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Contact.aspx" title="تماس با ما" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Service.aspx" title="کارگاه" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Ask.aspx" title="پرسش و پاسخ" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Product.aspx" title="محصولات" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Sponser.aspx" title="حامیان" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Organizer.aspx" title="برگزار کنندگان" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>-->
+    <siteMapNode url="~/Administrator/Product.aspx" title="محصول/طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Request/Product.aspx" title="تایید محصول/طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=Product" title="گزارش محصول/طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=Goods" title="گزارش محصولات" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+   <!-- <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=IsWebSite" title="مشخصات متقاضیان دارای وب سایت" description="~/App_Themes/Default/images/booking/profile-btn.png"/>-->
+    <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=Service" title="کارگاه های برگزار شده" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=Applicant" title="لیست متقاضیان" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Report/ReportViewer.aspx?Name=IsPresentation" title="حضور در نمایشگاه" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/News.aspx" title="اخبار" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Administrator/Gallery.aspx" title="گالری" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Account/ChangePassword.aspx" title="تغییر کلمه عبور" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Administrator/Roles/UsersAndRoles.aspx" title="نقش کاربران" description="~/App_Themes/Default/images/booking/role-btn.png"/>
+    <siteMapNode url="~/Administrator/Roles/CreateUserWizardWithRoles.aspx" title= "کاربر با نقش" description="~/App_Themes/Default/images/booking/role-btn.png"/>
+    <siteMapNode url="~/Administrator/User.aspx" title=" کاربران" description="~/App_Themes/Default/images/booking/users-btn.png"/>
+    <siteMapNode url="~/Administrator/Faq.aspx" title="پرسش های متداول" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+
+
+    <!--<siteMapNode url="" title="اطلاعات پایه" description="~/App_Themes/Default/images/booking/profile-btn.png">
+      <siteMapNode url="~/Basic/Process.aspx" title="فرآیند توسعه" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Basic/OwnerShip.aspx" title="وضعیت مالکیت طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Basic/Country.aspx" title="کشور" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Basic/SpecialService.aspx" title="خدمات تخصصی مورد نیاز" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Basic/Field.aspx" title="حوزه های تخصصی محصول" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Basic/Degree.aspx" title="تحصیلات" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    </siteMapNode>-->
+    <siteMapNode url="~/Logout.aspx" title="خروج" description="~/App_Themes/Default/images/booking/exit-btn.png" />
+  </siteMapNode>
+</siteMap>
+
+
+
+

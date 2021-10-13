@@ -1,0 +1,293 @@
+/*
+* Nova HTML Template v 1.2
+*
+*/
+
+/* TIP-YELLOWSIMPLE.CSS ------------------------------------------------------------*/
+.tip-yellowsimple {
+	z-index:1000;
+	text-align:left;
+	border:1px solid #ac0034;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	padding:6px 8px;
+	min-width:50px;
+	max-width:300px;
+	color:#fff;
+	background-color:#d90042;
+	/**
+	 * - If you set a background-image, border/padding/background-color will be ingnored.
+	 *   You can set any padding to .tip-inner instead if you need.
+	 * - If you want a tiled background-image and border/padding for the tip,
+	 *   set the background-image to .tip-inner instead.
+	 */
+}
+.tip-yellowsimple .tip-inner {
+	font:13px/17px Tahoma, Geneva, sans-serif;
+}
+
+/* Configure an arrow image - the script will automatically position it on the correct side of the tip */
+.tip-yellowsimple .tip-arrow-top {
+	margin-top:-6px;
+	margin-left:-5px; /* approx. half the width to center it */
+	top:0;
+	left:50%;
+	width:9px;
+	height:6px;
+	background:url(../js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple_arrows.gif) no-repeat;
+}
+.tip-yellowsimple .tip-arrow-right {
+	margin-top:-4px; /* approx. half the height to center it */
+	margin-left:0;
+	top:50%;
+	left:100%;
+	width:6px;
+	height:9px;
+	background:url(../js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple_arrows.gif) no-repeat -9px 0;
+}
+.tip-yellowsimple .tip-arrow-bottom {
+	margin-top:0;
+	margin-left:-5px; /* approx. half the width to center it */
+	top:100%;
+	left:50%;
+	width:9px;
+	height:6px;
+	background:url(../js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple_arrows.gif) no-repeat -18px 0;
+}
+.tip-yellowsimple .tip-arrow-left {
+	margin-top:-4px; /* approx. half the height to center it */
+	margin-left:-6px;
+	top:50%;
+	left:0;
+	width:6px;
+	height:9px;
+	background:url(../js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple_arrows.gif) no-repeat -27px 0;
+}
+
+
+/* RESET.CSS ------------------------------------------------------------*/
+
+.fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+
+/* HACKS ------------------------------------------------------------*/
+
+.clear{
+	clear:both;
+	height:1px;
+}
+
+.inv{ display:none; }
+
+.alignleft{
+	float: left;
+	margin: 5px 10px 5px 0px;
+}
+
+/* GENERAL ------------------------------------------------------------*/
+
+#map_canvas{
+	display: block;
+	height: 300px;
+	width: 438px;
+}
+
+
+
+
+
+
+
+
+#contact-content{
+	min-height: 400px;
+	overflow: hidden;
+	margin-bottom: 40px;
+	font-size: 14px;
+	line-height: 1.5em;
+	direction: rtl;
+	float: right;
+	text-align: justify;
+	width: 950px;
+}
+
+
+
+
+
+/* CONTACT --------------------------------------------------------*/
+
+.one-column{
+	width: 438px;
+	float: right;
+	margin-left: 37px;
+}
+
+/* FORMS ------------------------------------------------------------*/
+
+#sc-contact-form,
+#contactForm,
+#commentform,
+#contactForm{
+	margin-bottom: 18px;
+}
+
+#sc-contact-form input,
+#sc-contact-form textarea,
+.admin-form input,
+.admin-form textarea,
+#contactForm input,
+#contactForm textarea,
+#commentform input,
+#commentform textarea{
+	padding: 10px 15px;
+	/* Saf4+, Chrome */
+	/* Chrome 10+, Saf5.1+, iOS 5+ */
+	/* FF3.6 */
+	/* IE10 */
+	/* Opera 11.10+ */
+	border: 1px solid #cfcfcf;
+    color: #626262 !important;
+    border-radius: 10px !important;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    overflow: hidden;
+    background-image: linear-gradient(top, #e3e3e3, #eeeeee);/* IE6-IE9 */    
+	}
+#contactForm input[type="submit"]
+{
+        width: 155px !important;
+        clear:none !important;
+}
+
+
+#sc-contact-form input:focus,
+#sc-contact-form textarea:focus,
+.admin-form input:focus,
+.admin-form textarea:focus,
+#contactForm input:focus,
+#contactForm textarea:focus,
+#commentform input:focus,
+#commentform textarea:focus
+#sc-contact-form input:hover,
+#sc-contact-form textarea:hover,
+.admin-form input:hover,
+.admin-form textarea:hover,
+#contactForm input:hover,
+#contactForm textarea:hover,
+#commentform input:hover,
+#commentform textarea:hover{
+	color:#fff !important;
+}
+
+input:hover, input:focus, textarea:hover, textarea:focus{
+	background:#cd436d !important;
+	-webkit-transition:  0.6s linear;
+	-moz-transition:  0.6s linear;
+	-o-transition:  0.6s linear;
+	-ms-transition:  0.6s linear;
+	transition:  0.6s linear;
+
+}
+
+
+
+
+
+#sc-contact-form input,
+.admin-form input,
+#contactForm input,
+#commentform input{
+	width: 282px;
+}
+
+#sc-contact-form textarea,
+.admin-form textarea,
+#contactForm textarea,
+#commentform textarea{
+	width: 380px;
+}
+
+#sc-contact-form #submit,
+.admin-form #submit,
+#contactForm #submit,
+#commentform input#submit{
+	width: 76px;
+	margin: 21px 0px;
+	padding: 5px 0px;
+	background: #1e6bb4 !important;
+	color:#FFF !important;
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
+	box-shadow: 0px 1px 2px rgba(0,0,0,.5);
+	
+	border: 1px solid transparent;
+}
+
+#sc-contact-form #submit:hover,
+.admin-form #submit:hover,
+#contactForm #submit:hover,
+#commentform input#submit:hover{
+	background: #cd436d !important;
+	cursor:pointer;
+	-webkit-transition:  0.2s linear;
+	-moz-transition:  0.2s linear;
+	-o-transition:  0.2s linear;
+	-ms-transition:  0.2s linear;
+	transition:  0.2s linear;
+	
+	
+}
+
+#sc-contact-form input,
+#sc-contact-form textarea,
+.admin-form input,
+.admin-form textarea,
+#contactForm input,
+#contactForm textarea,
+#commentform input,
+#commentform textarea{
+	color: #606060;
+	font-size: 14px;
+	float: right;
+	clear: both;
+	direction: rtl;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+textarea{ resize:none }
+
+#sc-contact-form label,
+.admin-form label,
+#contactForm label,
+#commentform label{
+	display: block;
+	font-size: 14px;
+	line-height: 2.5em;
+	font-weight: light;
+	float: right;
+	clear: both;
+}

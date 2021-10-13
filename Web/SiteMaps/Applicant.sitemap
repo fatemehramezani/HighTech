@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="home">
+      <siteMapNode url="~/Applicant/Default.aspx" title="صفحه اصلی"/>
+      <siteMapNode url="~/Account/Profile.aspx" title="شخص حقیقی/حقوقی" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Applicant/Product.aspx" title="محصول/طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Applicant/Technology.aspx" title="فناوری" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Applicant/Request/Product.aspx" title="درخواست محصول/طرح" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Applicant/Request/Technology.aspx" title="درخواست فناوری" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <!--<siteMapNode url="~/Applicant/Request/Service.aspx" title="شرکت در کارگاه" description="~/App_Themes/Default/images/booking/profile-btn.png"/>-->
+      <siteMapNode url="~/Applicant/Request/Presentation.aspx" title="درخواست حضور نمایشگاه" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Applicant/Request/WebSite.aspx" title="درخواست طراحی سایت" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+      <siteMapNode url="~/Account/ChangePassword.aspx" title="تغییر کلمه عبور" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+      <siteMapNode url="~/Logout.aspx" title="خروج"/>                    
+    </siteMapNode>
+</siteMap>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report TextQuality="Regular" ReportInfo.Description="Demonstrates how to create drill-down group report. The report uses a script to hide or show a group:&#13;&#10;&#13;&#10;- add CheckBox object on a group header and set up its Hyperlink: set Kind to &quot;Custom&quot; and Value to group's name;&#13;&#10;&#13;&#10;- create a Click event handler that will be executed when you click the checkbox;&#13;&#10;&#13;&#10;- create a BeforePrint event handler of a group header. In the handler, check whether current group is visible or not.&#13;&#10;&#13;&#10;See the script code for more details." ReportInfo.Created="01/17/2008 04:31:41" ReportInfo.Modified="08/09/2014 12:15:42" ReportInfo.CreatorVersion="1.2.79.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    // list of visible groups
+    private List&lt;string&gt; validExpandedGroups = new List&lt;string&gt;();
+    
+    private void ValidGroupHeader_BeforePrint(object sender, EventArgs e)
+    {
+      // check if current group is visible
+      string groupName = ((String)Report.GetColumnValue(&quot;ApplicantProduct.Name&quot;)).Substring(0, 1);
+      bool groupVisible = validExpandedGroups.Contains(groupName);
+      
+      // toggle objects visibility
+ //     ValidData.Visible = groupVisible;
+//     ValidGroupFooter.Visible = groupVisible;
+      
+      // toggle indicator
+      ValidCheckBox.Checked = !groupVisible;
+    }
+
+    private void ValidCheckBox_Click(object sender, EventArgs e)
+    {
+      // get a group name
+      string groupName = (sender as CheckBoxObject).Hyperlink.Value;
+      
+      // toggle group
+      if (validExpandedGroups.Contains(groupName))
+        validExpandedGroups.Remove(groupName);
+      else
+        validExpandedGroups.Add(groupName);
+      
+      // refresh the report
+      Report.Refresh();
+    }
+////////////////////////////
+ // list of visible groups
+    private List&lt;string&gt; ReqExpandedGroups = new List&lt;string&gt;();
+    
+    private void ReqGroupHeader_BeforePrint(object sender, EventArgs e)
+    {
+      // check if current group is visible
+      string groupName = ((String)Report.GetColumnValue(&quot;ApplicantProduct.Name&quot;)).Substring(0, 1);
+      bool groupVisible = ReqExpandedGroups.Contains(groupName);
+      
+      // toggle objects visibility
+   //   ReqData.Visible = groupVisible;
+//     ValidGroupFooter.Visible = groupVisible;
+      
+      // toggle indicator
+     ReqCheckBox.Checked = !groupVisible;
+    }
+
+    private void ReqCheckBox_Click(object sender, EventArgs e)
+    {
+      // get a group name
+      string groupName = (sender as CheckBoxObject).Hyperlink.Value;
+      
+      // toggle group
+      if (ReqExpandedGroups.Contains(groupName))
+        ReqExpandedGroups.Remove(groupName);
+      else
+        ReqExpandedGroups.Add(groupName);
+      
+      // refresh the report
+      Report.Refresh();
+    }
+
+//////////////////////////
+
+
+///////////////
+  // list of visible groups
+    private List&lt;string&gt; InValidExpandedGroups = new List&lt;string&gt;();
+    
+    private void InValidGroupHeader_BeforePrint(object sender, EventArgs e)
+    {
+      // check if current group is visible
+      string groupName = ((String)Report.GetColumnValue(&quot;ApplicantProduct.Name&quot;)).Substring(0, 1);
+      bool groupVisible = InValidExpandedGroups.Contains(groupName);
+      
+      // toggle objects visibility
+   //   InValidData.Visible = groupVisible;
+//      InValidGroupFooter.Visible = groupVisible;
+      
+      // toggle indicator
+      InValidCheckBox.Checked = !groupVisible;
+    }
+
+    private void InValidCheckBox_Click(object sender, EventArgs e)
+    {
+      // get a group name
+      string groupName = (sender as CheckBoxObject).Hyperlink.Value;
+      
+      // toggle group
+      if (InValidExpandedGroups.Contains(groupName))
+        InValidExpandedGroups.Remove(groupName);
+      else
+        InValidExpandedGroups.Add(groupName);
+      
+      // refresh the report
+      Report.Refresh();
+    }
+/////////////
+  }
+}
+</ScriptText>
+  <Styles>
+    <Style Name="EvenRows" Fill.Color="OldLace"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq8rw7NwJnKCatgjyYdyDVOE2rG7OaEkBQVCJ9ZwG6Lb66qlCNDm/zZRdHUT9VbF/EWJx7S0fKRNpPekHp0uES787eiRkqvAAuvJn4wWkkGqw4aTnrTEg5++jgTmc6W/ZPbSG3/mFT3eGO5vAhUNsurEML+Z40RuJrRB7mj7JZFHG7njIzsDwcUg0YnY2Zd6sBGxJji38h8Ms8MJul9ucDQ1XWqqNLVpCcNt/lt0x3iXg0mYBV9nop1VGiarbNGV/t">
+      <TableDataSource Name="ApplicantProduct" DataType="System.Int32" Enabled="true" TableName="ApplicantProduct">
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="IsValid" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsGoods" DataType="System.String"/>
+        <Column Name="Image" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="Company" DataType="System.String"/>
+        <Column Name="FirstName" DataType="System.String"/>
+        <Column Name="LastName" DataType="System.String"/>
+        <Column Name="WebSite" DataType="System.String"/>
+        <Column Name="FullName" DataType="System.String"/>
+        <Column Name="IsRequested" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Total Name="TotalProducts" TotalType="Count" Evaluator="ValidData"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Left="28.35" Top="18.9" Width="359.1" Height="37.8" Fill="Glass" Fill.Color="Gainsboro" Fill.Blend="0.2" Fill.Hatch="true" Text="[IIf([ApplicantProduct.IsValid]==true,&quot;موارد تایید شده&quot;,&quot;موارد تایید نشده&quot;)]" HorzAlign="Center" Font="B Nazanin, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="ValidGoodsGroupHeader" Top="60.7" Width="718.2" Height="37.8" BeforePrintEvent="GroupHeader1_BeforePrint" KeepWithData="true" Condition="[ApplicantProduct.IsGoods]">
+      <TextObject Name="Text7" Left="28.35" Width="359.1" Height="37.8" Border.Lines="All" Border.Color="LightSkyBlue" Fill="Glass" Fill.Color="LightSkyBlue" Fill.Blend="0.2" Fill.Hatch="false" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" Text="[ApplicantProduct.IsGoods]" Padding="5, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="B Nazanin, 12pt, style=Bold" TextFill.Color="White"/>
+      <CheckBoxObject Name="ValidCheckBox" Top="14.45" Width="18.9" Height="18.9" Border.Lines="All" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" BeforePrintEvent="ValidGroupHeader_BeforePrint" ClickEvent="ValidCheckBox_Click" CheckedSymbol="Plus" UncheckedSymbol="Minus"/>
+      <DataBand Name="ValidData" Top="102.5" Width="718.2" Height="47.25" DataSource="ApplicantProduct" Filter="[ApplicantProduct.IsValid] == true">
+        <TextObject Name="Text2" Left="28.35" Width="151.2" Height="37.8" Border.Lines="Left" Border.Color="LightSkyBlue" Text="[ApplicantProduct.FullName]" VertAlign="Center" Font="Tahoma, 11pt">
+          <Highlight>
+            <Condition Expression="[Row#] % 2 == 0" Fill.Color="AliceBlue" TextFill.Color="Black" ApplyFill="true" ApplyTextFill="false"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text3" Left="189" Width="103.95" Height="37.8" Text="[ApplicantProduct.WebSite]" HorzAlign="Center" Font="Tahoma, 11pt"/>
+        <TextObject Name="Text4" Left="292.95" Width="425.25" Height="37.8" Text="[ApplicantProduct.Name]" HorzAlign="Center" Font="Tahoma, 10pt"/>
+      </DataBand>
+    </GroupHeaderBand>
+    <GroupHeaderBand Name="InValidGoodsGroupHeader" Top="153.75" Width="718.2" Height="75.6" BeforePrintEvent="GroupHeader1_BeforePrint" KeepWithData="true" Condition="[ApplicantProduct.IsGoods]">
+      <TextObject Name="Text7" Left="28.35" Top="37.8" Width="359.1" Height="37.8" Border.Lines="All" Border.Color="LightSkyBlue" Fill="Glass" Fill.Color="LightSkyBlue" Fill.Blend="0.2" Fill.Hatch="false" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" Text="[ApplicantProduct.IsGoods]" Padding="5, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="B Nazanin, 12pt, style=Bold" TextFill.Color="White"/>
+      <CheckBoxObject Name="InValidCheckBox" Top="52.25" Width="18.9" Height="18.9" Border.Lines="All" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" BeforePrintEvent="InValidGroupHeader_BeforePrint" ClickEvent="InValidCheckBox_Click" CheckedSymbol="Plus" UncheckedSymbol="Minus"/>
+      <TextObject Name="Text10" Left="28.35" Width="359.1" Height="37.8" Fill="Glass" Fill.Color="Gainsboro" Fill.Blend="0.2" Fill.Hatch="true" Text="[IIf([ApplicantProduct.IsValid]==true,&quot;موارد تایید شده&quot;,&quot;موارد تایید نشده&quot;)]" HorzAlign="Center" Font="B Nazanin, 16pt, style=Bold"/>
+      <DataBand Name="InValidData" Top="233.35" Width="718.2" Height="47.25" DataSource="ApplicantProduct" Filter="[ApplicantProduct.IsValid] == false">
+        <TextObject Name="Text2" Left="28.35" Width="151.2" Height="37.8" Border.Lines="Left" Border.Color="LightSkyBlue" Text="[ApplicantProduct.FullName]" VertAlign="Center" Font="Tahoma, 11pt">
+          <Highlight>
+            <Condition Expression="[Row#] % 2 == 0" Fill.Color="AliceBlue" TextFill.Color="Black" ApplyFill="true" ApplyTextFill="false"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text3" Left="189" Width="103.95" Height="37.8" Text="[ApplicantProduct.WebSite]" HorzAlign="Center" Font="Tahoma, 11pt"/>
+        <TextObject Name="Text4" Left="292.95" Width="425.25" Height="37.8" Text="[ApplicantProduct.Name]" HorzAlign="Center" Font="Tahoma, 10pt"/>
+      </DataBand>
+    </GroupHeaderBand>
+    <GroupHeaderBand Name="ReqGroupHeader" Top="284.6" Width="718.2" Height="75.6" KeepWithData="true" Condition="[ApplicantProduct.IsGoods]" KeepTogether="true">
+      <TextObject Name="Text11" Left="28.35" Width="359.1" Height="37.8" Fill="Glass" Fill.Color="Gainsboro" Fill.Blend="0.2" Fill.Hatch="true" Text="[IIf([ApplicantProduct.IsRequested]== true,&quot;موارد درخواست شده&quot;,&quot;موارد ثبت شده&quot;)]" HorzAlign="Center" VertAlign="Center" Font="B Nazanin, 16pt, style=Bold"/>
+      <TextObject Name="Text12" Left="28.35" Top="37.8" Width="359.1" Height="37.8" Border.Lines="All" Border.Color="LightSkyBlue" Fill="Glass" Fill.Color="LightSkyBlue" Fill.Blend="0.2" Fill.Hatch="false" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" Text="[ApplicantProduct.IsGoods]" Padding="5, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="B Nazanin, 12pt, style=Bold" TextFill.Color="White"/>
+      <CheckBoxObject Name="ReqCheckBox" Top="47.25" Width="18.9" Height="18.9" Border.Lines="All" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Kind="Custom" Hyperlink.Expression="[ApplicantProduct.Name].Substring(0,1)" BeforePrintEvent="ReqGroupHeader_BeforePrint" ClickEvent="ReqCheckBox_Click" CheckedSymbol="Plus" UncheckedSymbol="Minus"/>
+      <DataBand Name="ReqData" Top="364.2" Width="718.2" Height="39.41" Border.Lines="All" Border.Color="White" Fill.Color="White" DataSource="ApplicantProduct" Filter="[ApplicantProduct.IsGoods]" KeepTogether="true">
+        <TextObject Name="Text13" Left="28.35" Width="151.2" Height="37.8" Border.Lines="Left" Border.Color="LightSkyBlue" Text="[ApplicantProduct.FullName]" VertAlign="Center" Font="Tahoma, 11pt">
+          <Highlight>
+            <Condition Expression="[Row#] % 2 == 0" Fill.Color="AliceBlue" TextFill.Color="Black" ApplyFill="true" ApplyTextFill="false"/>
+          </Highlight>
+        </TextObject>
+        <TextObject Name="Text14" Left="189" Width="103.95" Height="37.8" Text="[ApplicantProduct.WebSite]" HorzAlign="Center" Font="Tahoma, 11pt"/>
+        <TextObject Name="Text15" Left="292.95" Width="425.25" Height="37.8" Text="[ApplicantProduct.Name]" HorzAlign="Center" Font="Tahoma, 10pt"/>
+      </DataBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="407.61" Width="718.2" Height="18.9">
+      <TextObject Name="Text9" Left="292.95" Width="94.5" Height="18.9" Text="[PageN]" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+  <ReportPage Name="Page2">
+    <ReportTitleBand Name="ReportTitle2" Width="718.2" Height="56.7"/>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="75.6">
+      <TextObject Name="Text5" Left="170.1" Top="9.45" Width="292.95" Height="37.8" Text="اطلاعات متقاضیان - محصول" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 16pt" TextFill.Color="RoyalBlue"/>
+    </PageHeaderBand>
+    <DataBand Name="Data2" Top="140.3" Width="718.2" Height="98.49">
+      <MatrixObject Name="Matrix2" Left="189" Top="18.9" Width="193.74" Height="67.32" FixedRows="1" FixedColumns="1" DataSource="ApplicantProduct" Style="Blue">
+        <MatrixColumns>
+          <Header Expression="[ApplicantProduct.FullName]"/>
+        </MatrixColumns>
+        <MatrixRows>
+          <Header Expression="[ApplicantProduct.IsGoods]"/>
+        </MatrixRows>
+        <MatrixCells>
+          <Cell Expression="[ApplicantProduct.Name]" Function="Count"/>
+        </MatrixCells>
+        <TableColumn Name="Column4" Width="69.01" AutoSize="true"/>
+        <TableColumn Name="Column5" Width="76.2" AutoSize="true"/>
+        <TableColumn Name="Column6" Width="48.53" AutoSize="true"/>
+        <TableRow Name="Row3" Height="20.76" AutoSize="true">
+          <TableCell Name="Cell7" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="نام" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="[FullName]" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell11" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="مجموع" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="25.8" AutoSize="true">
+          <TableCell Name="Cell9" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="[IsGoods]" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell10" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" Text="[Name]" HorzAlign="Right" VertAlign="Center" Font="B Nazanin, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center" Font="B Nazanin, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="20.76" AutoSize="true">
+          <TableCell Name="Cell13" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" Text="مجموع" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell14" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center" Font="B Nazanin, 10pt, style=Bold"/>
+          <TableCell Name="Cell15" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center" Font="B Nazanin, 10pt, style=Bold"/>
+        </TableRow>
+      </MatrixObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter2" Top="242.79" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

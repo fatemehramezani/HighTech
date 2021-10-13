@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/26/2014 15:34:17" ReportInfo.Modified="08/02/2014 14:37:50" ReportInfo.CreatorVersion="1.2.79.0">
+  <Styles>
+    <Style Name="EvenStyle" Fill.Color="WhiteSmoke"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq8rw7NwJnKCatgjyYdyDVOE2rG7OaEkBQVCJ9ZwG6Lb66qlCNDm/zZRdHUT9VbF/EWJx7S0fKRNpPekHp0uES787eiRkqvAAuvJn4wWkkGqw4aTnrTEg5++jgTmc6W/ZPbSG3/mFT3eGO5vAhUNsurEML+Z40RuJrRB7mj7JZFHG7njIzsDwcUg0YnY2Zd6sBGxJji38h8Ms8MJul9ucDQ1XWqqNLVpCcNt/lt0x3iXg0mYBV9nop1VGiarbNGV/t">
+      <TableDataSource Name="ApplicantData" DataType="System.Int32" Enabled="true" TableName="Applicant">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Role_Id" DataType="System.Guid"/>
+        <Column Name="UserId" DataType="System.Guid"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="Phone" DataType="System.String"/>
+        <Column Name="Company" DataType="System.String"/>
+        <Column Name="FirstName" DataType="System.String"/>
+        <Column Name="LastName" DataType="System.String"/>
+        <Column Name="DegreeId" DataType="System.Byte"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="WebSite" DataType="System.String"/>
+        <Column Name="Mobile" DataType="System.String"/>
+        <Column Name="Fax" DataType="System.String"/>
+        <Column Name="NationalCode" DataType="System.String"/>
+        <Column Name="PresenterCompany" DataType="System.String"/>
+        <Column Name="Image" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="ZipCode" DataType="System.String"/>
+        <Column Name="IsPresentation" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsWebSite" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsReal" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2"/>
+    <PageHeaderBand Name="PageHeader1" Top="4" Width="718.2" Height="28.35"/>
+    <GroupHeaderBand Name="GroupHeader1" Top="36.35" Width="718.2" Height="47.25" EvenStyle="EvenStyle" EvenStylePriority="UseAll" Condition="[ApplicantData.IsPresentation]== true">
+      <TextObject Name="Text1" Left="585.9" Width="85.05" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="نام متقاضی" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text4" Left="510.3" Width="85.05" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="نام خانوادگی" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text9" Left="434.7" Width="75.6" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="تلفن" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text11" Left="283.5" Width="75.6" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="کد ملی" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text2" Left="207.9" Width="75.6" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="نام شرکت" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text15" Left="94.5" Width="113.4" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="آدرس" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text3" Width="113.4" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="وب سایت" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text17" Left="670.95" Width="47.25" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="ردیف" HorzAlign="Center" VertAlign="Center" Font="B Nazanin, 14pt"/>
+      <TextObject Name="Text13" Left="359.1" Width="75.6" Height="47.25" Fill="Glass" Fill.Color="LightGreen" Fill.Blend="0.2" Fill.Hatch="true" Text="موبایل" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 14pt"/>
+      <DataBand Name="Data1" Top="87.6" Width="718.2" Height="47.25" Border.Lines="All" DataSource="ApplicantData">
+        <TableObject Name="Table1" Width="735.32" Height="47.25" Fill.Color="White" EvenStyle="EvenStyle" EvenStylePriority="UseAll">
+          <TableColumn Name="Column1" Width="108.99"/>
+          <TableColumn Name="Column2" Width="90.09"/>
+          <TableColumn Name="Column3" Width="79.75"/>
+          <TableColumn Name="Column4" Width="79.75"/>
+          <TableColumn Name="Column5" Width="80.64"/>
+          <TableColumn Name="Column6" Width="78.75"/>
+          <TableColumn Name="Column7" Width="59.85"/>
+          <TableColumn Name="Column8" Width="97.65"/>
+          <TableColumn Name="Column9" Width="59.85"/>
+          <TableRow Name="Row1" Height="47.25">
+            <TableCell Name="Cell1" Text="[ApplicantData.WebSite]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell2" Text="[ApplicantData.Address]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell3" Text="[ApplicantData.Company]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell4" Text="[ApplicantData.NationalCode]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell5" Text="[ApplicantData.Mobile]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell26" Text="[ApplicantData.Phone]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell27" Text="[ApplicantData.LastName]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell28" Text="[ApplicantData.FirstName]" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt"/>
+            <TableCell Name="Cell29" Text="[Row#]" HorzAlign="Center" VertAlign="Center" RightToLeft="true" Font="B Nazanin, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="138.85" Width="718.2" Height="37.8"/>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="180.65" Width="718.2" Height="37.8"/>
+  </ReportPage>
+</Report>

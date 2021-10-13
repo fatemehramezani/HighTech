@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="">
+    <siteMapNode url="~/Nurse/Default.aspx" title="home" description="~/App_Themes/Default/images/home-btn-text.png"/>
+    <siteMapNode url="~/Account/ChangePassword.aspx" title="changepassword" description="~/App_Themes/Default/images/home-btn-text.png"/>
+    <siteMapNode url="~/Basic/Doctor.aspx" title="docotr" description="~/App_Themes/Default/images/gallery-btn-text.png" />
+    <siteMapNode url="~/Nurse/DoctorScheduler.aspx" title="doctorscheduler" description="~/App_Themes/Default/images/gallery-btn-text.png"/>
+    <siteMapNode url="~/Nurse/PatientScheduler.aspx" title="patientscheduler" description="~/App_Themes/Default/images/home-btn-text.png"/>
+    <siteMapNode url="~/Basic/Room.aspx" title="room" description="~/App_Themes/Default/images/home-btn-text.png"/>
+    <siteMapNode url="~/Basic/Skill.aspx" title="skill" description="~/App_Themes/Default/images/home-btn-text.png"/>
+    <siteMapNode url="~/Logout.aspx" title="logout" description="~/App_Themes/Default/images/login-btn-text.png"/>
+  </siteMapNode>
+</siteMap>

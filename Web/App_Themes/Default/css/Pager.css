@@ -1,0 +1,162 @@
+﻿.pager select{
+}
+
+
+/* ====================     dropdown      =======================*/
+/* GLOBALS */
+
+.pager select,.main *,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background: rgba(73,201,255,0.3); 
+}
+
+::-moz-selection {
+    background: #3CF; 
+}
+
+/* DEMO 2 */
+
+.wrapper-dropdown-2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px !important;
+	color: #666 !important;
+	/* Size and position */
+	position: relative !important; /* Enable absolute positionning for children and pseudo elements */
+	width: 196px !important;
+	/* Styles */
+	background: #fff !important;
+	/*border-left: 5px solid grey;*/
+	border: 1px solid #39F !important;
+	cursor: pointer;
+	outline: none;
+	direction: rtl;
+	padding-top: 9px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+
+.wrapper-dropdown-2:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #39F transparent;
+}
+
+.wrapper-dropdown-2 .dropdown {
+	/* Size & position */
+	font-size: 12px !important;
+	font-weight: normal !important;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	right: -1px;
+	/* Styles */
+	width: 196px;
+	background: white;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	list-style: none;
+	/* Hiding */
+	opacity: 0;
+	pointer-events: none;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #39F;
+	border-bottom-color: #39F;
+	border-left-color: #39F;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #D4D4D4;
+}
+
+.wrapper-dropdown-2 .dropdown li a {
+	font-size:12px !important;
+	font-weight:normal !important;
+	margin:0px !important;
+    display: block !important;
+    text-decoration: none !important;
+    color: #333 !important;
+    /*border-left: 5px solid;*/
+    padding: 10px !important;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-2 .dropdown li:nth-child(1) a { 
+    /*border-left-color: #00ACED;*/
+}
+
+.wrapper-dropdown-2 .dropdown li:nth-child(2) a {
+    /*border-left-color: #4183C4;*/
+}
+
+.wrapper-dropdown-2 .dropdown li:nth-child(3) a {
+    /*border-left-color: #3B5998;*/
+}
+
+.wrapper-dropdown-2 .dropdown li i {
+    margin-right: 5px !important;
+    color: inherit !important;
+    vertical-align: middle !important;
+	font-size:12px !important;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-2 .dropdown li:hover a {
+    color: grey !important;
+	background:#efefef !important;
+}
+
+/* Active state */
+
+.wrapper-dropdown-2.active:after {
+    border-width: 0 6px 6px 6px !important;
+}
+
+.wrapper-dropdown-2.active .dropdown {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* No CSS3 support */
+
+.no-opacity       .wrapper-dropdown-2 .dropdown,
+.no-pointerevents .wrapper-dropdown-2 .dropdown {
+    display: none !important;
+    opacity: 1 !important; /* If opacity support but no pointer-events support */
+    pointer-events: auto !important; /* If pointer-events support but no pointer-events support */
+}
+
+.no-opacity       .wrapper-dropdown-2.active .dropdown,
+.no-pointerevents .wrapper-dropdown-2.active .dropdown {
+    display: block !important;
+}
+
+/* ====================     dropdown      =======================*/

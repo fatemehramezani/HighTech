@@ -1,0 +1,96 @@
+body,div,dl,dt,dd,ul,ol,li,h2,h3,h5,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+ol,ul {
+	list-style:none;
+}
+
+/*Sliding Text and Icon Menu Style*/
+.sti-menu{
+	width: 1004px;
+	position: relative;
+	margin-right: 1px;
+	height: 96px;
+	float: right;
+}
+.sti-menu li{
+	float: right;
+	width: 88px;
+	height: 88px;
+	margin-left: 1px;
+	
+}
+.sti-menu li a{
+	display: block;
+	overflow: visible;
+	background: #d90042;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.sti-menu li a h2{
+	color: #fff;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	padding: 0px;
+	width: 88px;
+	top: 52px;
+	left: 0px;
+	height: 20px;
+}
+.sti-menu li a h3{
+	font-family: Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-size: 18px;
+	font-style: italic;
+	position: absolute;
+	top: 88px;
+	width: 88px;
+	height: 8px;
+	background-color: #fff;
+	left: 0px;
+}
+
+.sti-icon{
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	left: 25px;
+	top: 15px;
+}
+.sti-icon-home{
+	background-image: url(../images/home-icon.png);
+}
+.sti-icon-gallery{
+	background-image:url(../images/gallery-icon.png);
+}
+.sti-icon-about{
+	background-image:url(../images/about-icon.png);
+}
+.sti-icon-papers{
+	background-image:url(../images/papers-icon.png);
+}
+.sti-icon-contact{
+	background-image:url(../images/contact-icon.png);
+}
+.sti-icon-login{
+	background-image:url(../images/login-icon.png);
+}
+.sti-icon-schedular {
+    background-image: url(../images/schedular-icon.png);
+}
+.sti-icon-sign-up{
+	background-image:url(../images/sign-up-icon.png);
+}
+
+.sti-icon-bottom{
+	background-image:url(../images/bottom.png);
+}

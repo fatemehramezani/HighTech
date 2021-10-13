@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Applicant" EntityType="DatabaseModel.Store.Applicant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Application" EntityType="DatabaseModel.Store.Application" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="DatabaseModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="DatabaseModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Degree" EntityType="DatabaseModel.Store.Degree" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExceptionHandler" EntityType="DatabaseModel.Store.ExceptionHandler" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Faq" EntityType="DatabaseModel.Store.Faq" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Field" EntityType="DatabaseModel.Store.Field" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Help" EntityType="DatabaseModel.Store.Help" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="News" EntityType="DatabaseModel.Store.News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NoSelection" EntityType="DatabaseModel.Store.NoSelection" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OwnerShip" EntityType="DatabaseModel.Store.OwnerShip" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Paper" EntityType="DatabaseModel.Store.Paper" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Process" EntityType="DatabaseModel.Store.Process" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="DatabaseModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profile" EntityType="DatabaseModel.Store.Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="DatabaseModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sentence" EntityType="DatabaseModel.Store.Sentence" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Service" EntityType="DatabaseModel.Store.Service" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SpecialService" EntityType="DatabaseModel.Store.SpecialService" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Technology" EntityType="DatabaseModel.Store.Technology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="DatabaseModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInRole" EntityType="DatabaseModel.Store.UsersInRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ApplicantProduct" EntityType="DatabaseModel.Store.ApplicantProduct" store:Type="Views" store:Schema="dbo" store:Name="ApplicantProduct">
+            <DefiningQuery>SELECT 
+      [ApplicantProduct].[Name] AS [Name], 
+      [ApplicantProduct].[Description] AS [Description], 
+      [ApplicantProduct].[IsValid] AS [IsValid], 
+      [ApplicantProduct].[IsGoods] AS [IsGoods], 
+      [ApplicantProduct].[Image] AS [Image], 
+      [ApplicantProduct].[Company] AS [Company], 
+      [ApplicantProduct].[FirstName] AS [FirstName], 
+      [ApplicantProduct].[LastName] AS [LastName], 
+      [ApplicantProduct].[WebSite] AS [WebSite], 
+      [ApplicantProduct].[FullName] AS [FullName], 
+      [ApplicantProduct].[Id] AS [Id]
+      FROM [dbo].[ApplicantProduct] AS [ApplicantProduct]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Applicant_Degree" Association="DatabaseModel.Store.FK_Applicant_Degree">
+            <End Role="Degree" EntitySet="Degree" />
+            <End Role="Applicant" EntitySet="Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Applicant_User" Association="DatabaseModel.Store.FK_Applicant_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Applicant" EntitySet="Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Applicant" Association="DatabaseModel.Store.FK_Product_Applicant">
+            <End Role="Applicant" EntitySet="Applicant" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_User" Association="DatabaseModel.Store.FK_Profile_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_Application" Association="DatabaseModel.Store.FK_Role_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_Country" Association="DatabaseModel.Store.FK_Technology_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Technology" EntitySet="Technology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_OwnerShip" Association="DatabaseModel.Store.FK_Technology_OwnerShip">
+            <End Role="OwnerShip" EntitySet="OwnerShip" />
+            <End Role="Technology" EntitySet="Technology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_Process" Association="DatabaseModel.Store.FK_Technology_Process">
+            <End Role="Process" EntitySet="Process" />
+            <End Role="Technology" EntitySet="Technology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Application" Association="DatabaseModel.Store.FK_User_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Role" Association="DatabaseModel.Store.FK_UsersInRoles_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UsersInRole" EntitySet="UsersInRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_User" Association="DatabaseModel.Store.FK_UsersInRoles_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UsersInRole" EntitySet="UsersInRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsReal" Type="bit" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="16" />
+          <Property Name="Company" Type="nvarchar" MaxLength="128" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="32" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="32" />
+          <Property Name="DegreeId" Type="tinyint" />
+          <Property Name="Email" Type="nvarchar" MaxLength="32" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="32" />
+          <Property Name="Mobile" Type="nchar" MaxLength="10" />
+          <Property Name="Fax" Type="nchar" MaxLength="10" />
+          <Property Name="NationalCode" Type="nchar" MaxLength="10" />
+          <Property Name="PresenterCompany" Type="nvarchar" MaxLength="32" />
+          <Property Name="Image" Type="image" />
+          <Property Name="ZipCode" Type="nchar" MaxLength="10" />
+          <Property Name="IsPresentation" Type="bit" Nullable="false" />
+          <Property Name="IsWebSite" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Email" Type="nvarchar" MaxLength="32" />
+          <Property Name="Context" Type="nvarchar" MaxLength="256" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Answer" Type="nvarchar" MaxLength="256" />
+          <Property Name="Mobile" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ExceptionHandler">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="HelpNote" Type="nvarchar" MaxLength="128" />
+          <Property Name="Message" Type="nvarchar" MaxLength="128" />
+          <Property Name="InnerException" Type="nvarchar" MaxLength="128" />
+          <Property Name="Code" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faq">
+          <Key>
+            <PropertyRef Name="FaqId" />
+          </Key>
+          <Property Name="FaqId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FaqTitle" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Email" Type="nvarchar" MaxLength="32" />
+          <Property Name="Context" Type="nvarchar" MaxLength="256" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Answer" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsPrivate" Type="bit" Nullable="false" />
+          <Property Name="IsShown" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Help">
+          <Key>
+            <PropertyRef Name="HelpID" />
+          </Key>
+          <Property Name="HelpID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HelpTitle" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="64" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NewsTitle" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="64" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="64" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NoSelection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="OwnerShip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Paper">
+          <Key>
+            <PropertyRef Name="PaperID" />
+          </Key>
+          <Property Name="PaperID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PaperTitle" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="64" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="text" />
+          <Property Name="IsValid" Type="bit" />
+          <Property Name="IsGoods" Type="bit" />
+          <Property Name="Image" Type="image" />
+          <Property Name="ApplicantId" Type="int" />
+          <Property Name="IsRequested" Type="bit" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="nvarchar(max)" />
+          <Property Name="PropertyValuesString" Type="nvarchar(max)" />
+          <Property Name="PropertyValuesBinary" Type="varbinary(max)" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Application_Id" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sentence">
+          <Key>
+            <PropertyRef Name="SentenceID" />
+          </Key>
+          <Property Name="SentenceID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SentenceText" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTitle" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="64" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="SpecialService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Technology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PersianName" Type="nvarchar" MaxLength="128" />
+          <Property Name="EnglishName" Type="nvarchar" MaxLength="128" />
+          <Property Name="Location" Type="nvarchar" MaxLength="128" />
+          <Property Name="Fields" Type="nvarchar" MaxLength="512" />
+          <Property Name="Information" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Usage" Type="nvarchar" MaxLength="512" />
+          <Property Name="Innovation" Type="nvarchar" MaxLength="512" />
+          <Property Name="ProcessId" Type="tinyint" />
+          <Property Name="Finance" Type="smallint" />
+          <Property Name="Const" Type="smallint" />
+          <Property Name="Variable" Type="smallint" />
+          <Property Name="OwnerShipId" Type="tinyint" />
+          <Property Name="Title" Type="nvarchar" MaxLength="512" />
+          <Property Name="CountryId" Type="tinyint" />
+          <Property Name="Facility" Type="smallint" />
+          <Property Name="Land" Type="int" />
+          <Property Name="SpecialServices" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantId" Type="int" />
+          <Property Name="IsRequested" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="255" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="IsOnline" Type="bit" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="LastLockedOutDate" Type="datetime" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+          <Property Name="LastModified" Type="datetime" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="Application_Id" Type="uniqueidentifier" />
+          <Property Name="Mobile" Type="nchar" MaxLength="10" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UsersInRole">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="User_Id" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'hitecharak.dbo.ApplicantProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ApplicantProduct">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="IsGoods" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="text" />
+          <Property Name="IsValid" Type="bit" />
+          <Property Name="IsGoods" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Company" Type="nvarchar" MaxLength="128" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="32" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="32" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="32" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="65" />
+          <Property Name="Id" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Applicant_Degree">
+          <End Role="Degree" Type="DatabaseModel.Store.Degree" Multiplicity="0..1" />
+          <End Role="Applicant" Type="DatabaseModel.Store.Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Applicant_User">
+          <End Role="User" Type="DatabaseModel.Store.User" Multiplicity="1" />
+          <End Role="Applicant" Type="DatabaseModel.Store.Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Applicant">
+          <End Role="Applicant" Type="DatabaseModel.Store.Applicant" Multiplicity="0..1" />
+          <End Role="Product" Type="DatabaseModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_User">
+          <End Role="User" Type="DatabaseModel.Store.User" Multiplicity="1" />
+          <End Role="Profile" Type="DatabaseModel.Store.Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_Application">
+          <End Role="Application" Type="DatabaseModel.Store.Application" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Role" Type="DatabaseModel.Store.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="Application_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_Country">
+          <End Role="Country" Type="DatabaseModel.Store.Country" Multiplicity="0..1" />
+          <End Role="Technology" Type="DatabaseModel.Store.Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_OwnerShip">
+          <End Role="OwnerShip" Type="DatabaseModel.Store.OwnerShip" Multiplicity="0..1" />
+          <End Role="Technology" Type="DatabaseModel.Store.Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OwnerShip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="OwnerShipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_Process">
+          <End Role="Process" Type="DatabaseModel.Store.Process" Multiplicity="0..1" />
+          <End Role="Technology" Type="DatabaseModel.Store.Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="ProcessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Application">
+          <End Role="Application" Type="DatabaseModel.Store.Application" Multiplicity="0..1" />
+          <End Role="User" Type="DatabaseModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Application_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Role">
+          <End Role="Role" Type="DatabaseModel.Store.Role" Multiplicity="1" />
+          <End Role="UsersInRole" Type="DatabaseModel.Store.UsersInRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRole">
+              <PropertyRef Name="Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_User">
+          <End Role="User" Type="DatabaseModel.Store.User" Multiplicity="1" />
+          <End Role="UsersInRole" Type="DatabaseModel.Store.UsersInRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRole">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatabaseEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Applicants" EntityType="DatabaseModel.Applicant" />
+          <EntitySet Name="Applications" EntityType="DatabaseModel.Application" />
+          <EntitySet Name="Contacts" EntityType="DatabaseModel.Contact" />
+          <EntitySet Name="Countries" EntityType="DatabaseModel.Country" />
+          <EntitySet Name="Degrees" EntityType="DatabaseModel.Degree" />
+          <EntitySet Name="ExceptionHandlers" EntityType="DatabaseModel.ExceptionHandler" />
+          <EntitySet Name="Faqs" EntityType="DatabaseModel.Faq" />
+          <EntitySet Name="Fields" EntityType="DatabaseModel.Field" />
+          <EntitySet Name="Helps" EntityType="DatabaseModel.Help" />
+          <EntitySet Name="News" EntityType="DatabaseModel.News" />
+          <EntitySet Name="NoSelections" EntityType="DatabaseModel.NoSelection" />
+          <EntitySet Name="OwnerShips" EntityType="DatabaseModel.OwnerShip" />
+          <EntitySet Name="Papers" EntityType="DatabaseModel.Paper" />
+          <EntitySet Name="Processes" EntityType="DatabaseModel.Process" />
+          <EntitySet Name="Profiles" EntityType="DatabaseModel.Profile" />
+          <EntitySet Name="Roles" EntityType="DatabaseModel.Role" />
+          <EntitySet Name="Sentences" EntityType="DatabaseModel.Sentence" />
+          <EntitySet Name="Services" EntityType="DatabaseModel.Service" />
+          <EntitySet Name="SpecialServices" EntityType="DatabaseModel.SpecialService" />
+          <EntitySet Name="Technologies" EntityType="DatabaseModel.Technology" />
+          <EntitySet Name="Users" EntityType="DatabaseModel.User" />
+          <EntitySet Name="ApplicantProducts" EntityType="DatabaseModel.ApplicantProduct" />
+          <AssociationSet Name="FK_Applicant_Degree" Association="DatabaseModel.FK_Applicant_Degree">
+            <End Role="Degree" EntitySet="Degrees" />
+            <End Role="Applicant" EntitySet="Applicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Applicant_User" Association="DatabaseModel.FK_Applicant_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Applicant" EntitySet="Applicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_Application" Association="DatabaseModel.FK_Role_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Application" Association="DatabaseModel.FK_User_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_Country" Association="DatabaseModel.FK_Technology_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Technology" EntitySet="Technologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_OwnerShip" Association="DatabaseModel.FK_Technology_OwnerShip">
+            <End Role="OwnerShip" EntitySet="OwnerShips" />
+            <End Role="Technology" EntitySet="Technologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Technology_Process" Association="DatabaseModel.FK_Technology_Process">
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="Technology" EntitySet="Technologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_User" Association="DatabaseModel.FK_Profile_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Profile" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRole" Association="DatabaseModel.UsersInRole">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Products" EntityType="DatabaseModel.Product" />
+          <AssociationSet Name="FK_Product_Applicant" Association="DatabaseModel.FK_Product_Applicant">
+            <End Role="Applicant" EntitySet="Applicants" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Boolean" Name="IsReal" />
+          <Property Type="String" Name="Address" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Company" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="DegreeId" />
+          <Property Type="String" Name="Email" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="NationalCode" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="PresenterCompany" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="ZipCode" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="IsPresentation" Nullable="false" />
+          <Property Type="Boolean" Name="IsWebSite" Nullable="false" />
+          <NavigationProperty Name="Degree" Relationship="DatabaseModel.FK_Applicant_Degree" FromRole="Applicant" ToRole="Degree" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.FK_Applicant_User" FromRole="Applicant" ToRole="User" />
+          <NavigationProperty Name="Products" Relationship="DatabaseModel.FK_Product_Applicant" FromRole="Applicant" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Roles" Relationship="DatabaseModel.FK_Role_Application" FromRole="Application" ToRole="Role" />
+          <NavigationProperty Name="Users" Relationship="DatabaseModel.FK_User_Application" FromRole="Application" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Type="Int32" Name="ContactId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Phone" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Context" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Precision="3" />
+          <Property Type="String" Name="Answer" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Technologies" Relationship="DatabaseModel.FK_Technology_Country" FromRole="Country" ToRole="Technology" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Applicants" Relationship="DatabaseModel.FK_Applicant_Degree" FromRole="Degree" ToRole="Applicant" />
+        </EntityType>
+        <EntityType Name="ExceptionHandler">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HelpNote" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InnerException" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="Code" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faq">
+          <Key>
+            <PropertyRef Name="FaqId" />
+          </Key>
+          <Property Type="Int32" Name="FaqId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FaqTitle" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Context" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Precision="3" />
+          <Property Type="String" Name="Answer" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsPrivate" Nullable="false" />
+          <Property Type="Boolean" Name="IsShown" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Help">
+          <Key>
+            <PropertyRef Name="HelpID" />
+          </Key>
+          <Property Type="Byte" Name="HelpID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="HelpTitle" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Type="Byte" Name="NewsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NewsTitle" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" Precision="3" />
+        </EntityType>
+        <EntityType Name="NoSelection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OwnerShip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Technologies" Relationship="DatabaseModel.FK_Technology_OwnerShip" FromRole="OwnerShip" ToRole="Technology" />
+        </EntityType>
+        <EntityType Name="Paper">
+          <Key>
+            <PropertyRef Name="PaperID" />
+          </Key>
+          <Property Type="Byte" Name="PaperID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PaperTitle" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Technologies" Relationship="DatabaseModel.FK_Technology_Process" FromRole="Process" ToRole="Technology" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="PropertyNames" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PropertyValuesString" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="PropertyValuesBinary" MaxLength="Max" FixedLength="false" />
+          <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="DatabaseModel.FK_Profile_User" FromRole="Profile" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="Application_Id" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="DatabaseModel.FK_Role_Application" FromRole="Role" ToRole="Application" />
+          <NavigationProperty Name="Users" Relationship="DatabaseModel.UsersInRole" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Sentence">
+          <Key>
+            <PropertyRef Name="SentenceID" />
+          </Key>
+          <Property Type="Byte" Name="SentenceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SentenceText" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDefault" Nullable="false" />
+          <Property Type="DateTime" Name="InsertDate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Type="Byte" Name="ServiceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ServiceTitle" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileUrl" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SpecialService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Byte" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Technology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="PersianName" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EnglishName" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fields" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Information" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Usage" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Innovation" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="ProcessId" />
+          <Property Type="Int16" Name="Finance" />
+          <Property Type="Int16" Name="Const" />
+          <Property Type="Int16" Name="Variable" />
+          <Property Type="Byte" Name="OwnerShipId" />
+          <Property Type="String" Name="Title" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="CountryId" />
+          <Property Type="Int16" Name="Facility" />
+          <Property Type="Int32" Name="Land" />
+          <Property Type="String" Name="SpecialServices" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ApplicantId" />
+          <Property Type="Boolean" Name="IsRequested" />
+          <NavigationProperty Name="Country" Relationship="DatabaseModel.FK_Technology_Country" FromRole="Technology" ToRole="Country" />
+          <NavigationProperty Name="OwnerShip" Relationship="DatabaseModel.FK_Technology_OwnerShip" FromRole="Technology" ToRole="OwnerShip" />
+          <NavigationProperty Name="Process" Relationship="DatabaseModel.FK_Technology_Process" FromRole="Technology" ToRole="Process" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Precision="3" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastLoginDate" Precision="3" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Precision="3" />
+          <Property Type="Boolean" Name="IsOnline" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockedOutDate" Precision="3" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Precision="3" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Precision="3" />
+          <Property Type="DateTime" Name="LastModified" Precision="3" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="Guid" Name="Application_Id" />
+          <Property Type="String" Name="Mobile" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Applicants" Relationship="DatabaseModel.FK_Applicant_User" FromRole="User" ToRole="Applicant" />
+          <NavigationProperty Name="Application" Relationship="DatabaseModel.FK_User_Application" FromRole="User" ToRole="Application" />
+          <NavigationProperty Name="Profile" Relationship="DatabaseModel.FK_Profile_User" FromRole="User" ToRole="Profile" />
+          <NavigationProperty Name="Roles" Relationship="DatabaseModel.UsersInRole" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="ApplicantProduct">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="IsGoods" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsValid" />
+          <Property Type="String" Name="IsGoods" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Company" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FullName" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Id" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Applicant_Degree">
+          <End Type="DatabaseModel.Degree" Role="Degree" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Applicant" Role="Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Applicant_User">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Applicant" Role="Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_Application">
+          <End Type="DatabaseModel.Application" Role="Application" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DatabaseModel.Role" Role="Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="Application_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Application">
+          <End Type="DatabaseModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Application_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_Country">
+          <End Type="DatabaseModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Technology" Role="Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_OwnerShip">
+          <End Type="DatabaseModel.OwnerShip" Role="OwnerShip" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Technology" Role="Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OwnerShip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="OwnerShipId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Technology_Process">
+          <End Type="DatabaseModel.Process" Role="Process" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Technology" Role="Technology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Technology">
+              <PropertyRef Name="ProcessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_User">
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="1" />
+          <End Type="DatabaseModel.Profile" Role="Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRole">
+          <End Type="DatabaseModel.Role" Role="Role" Multiplicity="*" />
+          <End Type="DatabaseModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int16" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsValid" />
+          <Property Type="Boolean" Name="IsGoods" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="ApplicantId" />
+          <Property Type="Boolean" Name="IsRequested" />
+          <NavigationProperty Name="Applicant" Relationship="DatabaseModel.FK_Product_Applicant" FromRole="Product" ToRole="Applicant" />
+        </EntityType>
+        <Association Name="FK_Product_Applicant">
+          <End Type="DatabaseModel.Applicant" Role="Applicant" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Applicants">
+            <EntityTypeMapping TypeName="DatabaseModel.Applicant">
+              <MappingFragment StoreEntitySet="Applicant">
+                <ScalarProperty Name="IsWebSite" ColumnName="IsWebSite" />
+                <ScalarProperty Name="IsPresentation" ColumnName="IsPresentation" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="PresenterCompany" ColumnName="PresenterCompany" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DegreeId" ColumnName="DegreeId" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsReal" ColumnName="IsReal" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="DatabaseModel.Application">
+              <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="DatabaseModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="DatabaseModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Degrees">
+            <EntityTypeMapping TypeName="DatabaseModel.Degree">
+              <MappingFragment StoreEntitySet="Degree">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExceptionHandlers">
+            <EntityTypeMapping TypeName="DatabaseModel.ExceptionHandler">
+              <MappingFragment StoreEntitySet="ExceptionHandler">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="InnerException" ColumnName="InnerException" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="HelpNote" ColumnName="HelpNote" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faqs">
+            <EntityTypeMapping TypeName="DatabaseModel.Faq">
+              <MappingFragment StoreEntitySet="Faq">
+                <ScalarProperty Name="IsShown" ColumnName="IsShown" />
+                <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FaqTitle" ColumnName="FaqTitle" />
+                <ScalarProperty Name="FaqId" ColumnName="FaqId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fields">
+            <EntityTypeMapping TypeName="DatabaseModel.Field">
+              <MappingFragment StoreEntitySet="Field">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Helps">
+            <EntityTypeMapping TypeName="DatabaseModel.Help">
+              <MappingFragment StoreEntitySet="Help">
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="HelpTitle" ColumnName="HelpTitle" />
+                <ScalarProperty Name="HelpID" ColumnName="HelpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="DatabaseModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NewsTitle" ColumnName="NewsTitle" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoSelections">
+            <EntityTypeMapping TypeName="DatabaseModel.NoSelection">
+              <MappingFragment StoreEntitySet="NoSelection">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OwnerShips">
+            <EntityTypeMapping TypeName="DatabaseModel.OwnerShip">
+              <MappingFragment StoreEntitySet="OwnerShip">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Papers">
+            <EntityTypeMapping TypeName="DatabaseModel.Paper">
+              <MappingFragment StoreEntitySet="Paper">
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+                <ScalarProperty Name="PaperID" ColumnName="PaperID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processes">
+            <EntityTypeMapping TypeName="DatabaseModel.Process">
+              <MappingFragment StoreEntitySet="Process">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="DatabaseModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+                <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="DatabaseModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Application_Id" ColumnName="Application_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sentences">
+            <EntityTypeMapping TypeName="DatabaseModel.Sentence">
+              <MappingFragment StoreEntitySet="Sentence">
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="SentenceText" ColumnName="SentenceText" />
+                <ScalarProperty Name="SentenceID" ColumnName="SentenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="DatabaseModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialServices">
+            <EntityTypeMapping TypeName="DatabaseModel.SpecialService">
+              <MappingFragment StoreEntitySet="SpecialService">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Technologies">
+            <EntityTypeMapping TypeName="DatabaseModel.Technology">
+              <MappingFragment StoreEntitySet="Technology">
+                <ScalarProperty Name="IsRequested" ColumnName="IsRequested" />
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SpecialServices" ColumnName="SpecialServices" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OwnerShipId" ColumnName="OwnerShipId" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="Const" ColumnName="Const" />
+                <ScalarProperty Name="Finance" ColumnName="Finance" />
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="Innovation" ColumnName="Innovation" />
+                <ScalarProperty Name="Usage" ColumnName="Usage" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+                <ScalarProperty Name="Fields" ColumnName="Fields" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+                <ScalarProperty Name="PersianName" ColumnName="PersianName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DatabaseModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Application_Id" ColumnName="Application_Id" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicantProducts">
+            <EntityTypeMapping TypeName="DatabaseModel.ApplicantProduct">
+              <MappingFragment StoreEntitySet="ApplicantProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IsGoods" ColumnName="IsGoods" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInRole" TypeName="DatabaseModel.UsersInRole" StoreEntitySet="UsersInRole">
+            <EndProperty Name="User">
+              <ScalarProperty Name="Id" ColumnName="User_Id" />
+            </EndProperty>
+            <EndProperty Name="Role">
+              <ScalarProperty Name="Id" ColumnName="Role_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DatabaseModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="IsRequested" ColumnName="IsRequested" />
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IsGoods" ColumnName="IsGoods" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

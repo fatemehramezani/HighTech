@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClassLibrary.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ClassLibrary_com_smsmelli_www_smsserver" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.smsmelli.com/class/sms/webservice2/server.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

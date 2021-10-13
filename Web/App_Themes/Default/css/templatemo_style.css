@@ -1,0 +1,82 @@
+/*------------------------------------------------------
+	FLEXSLIDER OVERRIDING 
+--------------------------------------------------------*/
+.flexslider { margin-bottom: 100px; }
+.flexslider a:hover, .flexslider a:focus { text-decoration: none; }
+.flexslider { border: none;	-webkit-border-radius: 0; border-radius: 0; }
+.flexslider .slides li { position: relative; }
+.flex-caption {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    color: white;
+    background:rgba(197,82,87,.8);   
+    z-index:1;
+    padding: 20px;
+    margin: 0;
+    text-align: right;
+}
+
+
+.loginbutton{
+	margin: 0px;
+	width: 50px;
+	border: 0px;
+	color: #333333;
+	font-weight: bold;
+	background: #FFFFFF;
+	cursor: pointer;
+}
+
+.more_button a {
+	clear: both;
+	display: block;
+	width: 100px;
+	height: 18px;
+	margin: 0px;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFF;
+	background: #79b5f3;
+	border: 1px solid #FFF;
+}
+
+
+#templatemo_container {
+	margin: auto;
+	width: 950px;
+	padding: 0px 10px;
+}
+
+#templatemo_services {
+    clear: both;
+    float: left;
+    width: 900px;
+    height: 272px;
+    padding-left: 50px;
+    margin-bottom: 25px;
+    font-family: 'B Roya' , Tahoma, Geneva, 'sans-serif !important';
+    font-size: x-large;
+    color: #fff;
+}
+
+.service_box {
+    float: left;
+    width: 220px;
+    height: 252px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 50px;
+    background: url('../images/boxBG.png') no-repeat;
+}
+
+.service_box p{
+	padding-bottom: 5px;
+}
+
+.service_box img{
+	padding-bottom: 5px;
+}
+

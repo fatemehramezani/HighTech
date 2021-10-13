@@ -1,0 +1,34 @@
+﻿.lable {
+    text-align: right;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+.button {
+    text-align: center;
+}
+
+.gvclass table th {
+    text-align: center;
+    border-radius: 5px;
+}
+
+.gridContainer {
+    margin-right: 35px;
+    margin-left: 35px;
+    max-height: 450px !important;
+    overflow: auto;
+}
+
+.formviewContainer {
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+    .formviewContainer > tbody tr td {
+        padding: 10px;
+    }
+
+.checkListBox tbody tr td{
+    padding: 0px !important;
+}

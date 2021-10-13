@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Responsive Image Gallery</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <meta name="description" content="Responsive Image Gallery with jQuery" />
+        
+
+		<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/2/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/2/style.css" />
+		<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/2/elastislide.css" />
+		<noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+			</style>
+		</noscript>
+        <script type="text/javascript" src="../App_Themes/Default/js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="../App_Themes/Default/js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="../App_Themes/Default/js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="../App_Themes/Default/js/jquery.elastislide.js"></script>
+		<script type="text/javascript" src="../App_Themes/Default/js/gallery.js"></script>
+		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+			<div class="rg-image-wrapper">
+				{{if itemsCount > 1}}
+					<div class="rg-image-nav">
+						<a href="#" class="rg-image-nav-prev">Previous Image</a>
+						<a href="#" class="rg-image-nav-next">Next Image</a>
+					</div>
+				{{/if}}
+				<div class="rg-image"></div>
+				<div class="rg-loading"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</script>
+    </head>
+    <body>
+		<div class="container"><!-- header -->
+		  <div class="content2">
+		    <div id="rg-gallery" >
+				  <div class="rg-thumbs">
+						<!-- Elastislide Carousel Thumbnail Viewer -->
+						<div class="es-carousel-wrapper">
+							<div class="es-nav">
+								<span class="es-nav-prev">قبلی</span>
+								<span class="es-nav-next">بعدی</span>
+							</div>
+							<div class="es-carousel">
+								<ul>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/1.jpg" data-large="../App_Themes/Default/images/1.jpg" alt="image1" data-description="From off a hill whose concave womb reworded" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/2.jpg" data-large="../App_Themes/Default/images/2.jpg" alt="image2" data-description="A plaintful story from a sistering vale" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/3.jpg" data-large="../App_Themes/Default/images/3.jpg" alt="image3" data-description="A plaintful story from a sistering vale" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/4.jpg" data-large="../App_Themes/Default/images/4.jpg" alt="image4" data-description="My spirits to attend this double voice accorded" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/5.jpg" data-large="../App_Themes/Default/images/5.jpg" alt="image5" data-description="And down I laid to list the sad-tuned tale" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/6.jpg" data-large="../App_Themes/Default/images/6.jpg" alt="image6" data-description="Ere long espied a fickle maid full pale" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/7.jpg" data-large="../App_Themes/Default/images/7.jpg" alt="image7" data-description="Tearing of papers, breaking rings a-twain" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/8.jpg" data-large="../App_Themes/Default/images/8.jpg" alt="image8" data-description="Storming her world with sorrow's wind and rain" /></a></li>
+									<li><a href="#"><img src="../App_Themes/Default/images/thumbs/9.jpg" data-large="../App_Themes/Default/images/9.jpg" alt="image9" data-description="Upon her head a platted hive of straw" /></a></li>
+								
+                                </ul>
+							</div>
+						</div>
+						<!-- End Elastislide Carousel Thumbnail Viewer -->
+			  </div><!-- rg-thumbs -->
+		    </div><!-- rg-gallery --></div><!-- content -->
+		</div><!-- container -->
+		
+    </body>
+</html>

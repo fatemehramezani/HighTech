@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/App_MasterPage/DefaultMasterPage.master" AutoEventWireup="true" CodeFile="MarkaziMasterPage.master.cs" Inherits="App_MasterPage_MarkaziMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+    <link href="../App_Themes/Default/css/templatemo_style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="SubHeadContent" runat="server" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="TitleContent" Runat="Server">
+    <asp:ContentPlaceHolder ID="SubTitleContent" runat="server" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
+        <div id="templatemo_container">
+
+        <div id="templatemo_services">
+            <div class="service_box">
+                <center>
+                    <img src="../App_Themes/Default/images/icon3.png" alt="استان مرکزی" />
+                    <h2>معرفی استان </h2>
+                    <br />
+                <a href="Markazi.aspx">
+                            <img src="../App_Themes/Default/images/read-more.png" alt="ادامه مطلب" width="83" height="17" border="0" class="read-more" style="float:none"/></a>
+                </center>
+            </div>
+
+            <div class="service_box">
+                <center>
+                    <img src="../App_Themes/Default/images/icon2.png" alt="مشاهیر" />
+                    <h2>مشاهیر و مفاخر</h2>
+                    <br />
+                   <a href="Celebrity.aspx">
+                            <img src="../App_Themes/Default/images/read-more.png" alt="ادامه مطلب" width="83" height="17" border="0" class="read-more" style="float:none"/></a>
+               
+                </center>
+            </div>
+
+            <div class="service_box">
+                <center>
+                    <img src="../App_Themes/Default/images/icon1.png" alt="گردشگری" />
+                    <h2>جاذبه های گردشگری</h2>
+                    <br />
+                <a href="Tourism.aspx">
+                            <img src="../App_Themes/Default/images/read-more.png" alt="ادامه مطلب" width="83" height="17" border="0" class="read-more" style="float:none"/></a>
+               
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <asp:ContentPlaceHolder ID="SubMainContent" runat="server" />
+</asp:Content>
+
